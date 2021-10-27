@@ -4,11 +4,86 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+import DeckGL from '@deck.gl/react'
+import { GeoJsonLayer } from '@deck.gl/layers'
+import { StaticMap } from 'react-map-gl'
+
+import { MAPBOX_TOKEN } from '../config'
+
 import { Toolbar, Box, Grid, Typography, Card, CardContent, CardMedia, CardActionArea } from '@mui/material'
 
 import Appbar from '../components/Appbar'
 
+// Viewport settings
+const INITIAL_VIEW_STATE = {
+  longitude: 127.93879233879944,
+  latitude: 34.871793906417426,
+  zoom: 10,
+  pitch: 0,
+  bearing: 0,
+}
+
 const Home: NextPage = () => {
+  const rel1 = new GeoJsonLayer({
+    id: 'test1-layer',
+    pointType: 'circle+text',
+    getText: (f) => f.properties.name,
+    getTextSize: 12,
+    data: {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [127.9, 34.8],
+      },
+      properties: {
+        name: 'namhae test 1',
+      },
+    },
+    pickable: true,
+    getPointRadius: 100,
+    getTextAlignmentBaseline: 'bottom',
+  })
+
+  const rel2 = new GeoJsonLayer({
+    id: 'test2-layer',
+    pointType: 'circle+text',
+    getText: (f) => f.properties.name,
+    getTextSize: 12,
+    data: {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [127.98, 34.76],
+      },
+      properties: {
+        name: 'namhae test 2',
+      },
+    },
+    pickable: true,
+    getPointRadius: 100,
+    getTextAlignmentBaseline: 'bottom',
+  })
+
+  const rel3 = new GeoJsonLayer({
+    id: 'test3-layer',
+    pointType: 'circle+text',
+    getText: (f) => f.properties.name,
+    getTextSize: 12,
+    data: {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [127.88, 34.83],
+      },
+      properties: {
+        name: 'namhae test 3',
+      },
+    },
+    pickable: true,
+    getPointRadius: 100,
+    getTextAlignmentBaseline: 'bottom',
+  })
+
   return (
     <Fragment>
       <Box>
@@ -20,52 +95,20 @@ const Home: NextPage = () => {
 
         <Appbar tabIndex={2} />
 
-        <main className={styles.main}>
-          <h1 className={styles.title}>Welcome to 관계형성!</h1>
-
-          <p className={styles.description}>
-            Get started by editing <code className={styles.code}>pages/index.tsx</code>
-          </p>
-
-          <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h2>Documentation &rarr;</h2>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h2>Learn &rarr;</h2>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a href="https://github.com/vercel/next.js/tree/master/examples" className={styles.card}>
-              <h2>Examples &rarr;</h2>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h2>Deploy &rarr;</h2>
-              <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-            </a>
-          </div>
-        </main>
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <Toolbar />
+          <DeckGL
+            initialViewState={INITIAL_VIEW_STATE}
+            controller={true}
+            layers={[rel1, rel2, rel3]}
+            getTooltip={({ object }: { object: any }) =>
+              object && (object.properties.name || object.properties.station)
+            }
+          >
+            <StaticMap mapboxApiAccessToken={MAPBOX_TOKEN} />
+          </DeckGL>
+        </Box>
       </Box>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </Fragment>
   )
 }
