@@ -19,6 +19,7 @@ specifiers:
   eslint-plugin-next: ~0.0.0
   eslint-plugin-prettier: ~4.0.0
   next: 12.0.1
+  prettier: ~2.4.1
   react: 17.0.2
   react-dom: 17.0.2
   react-map-gl: ~6.1.17
@@ -41,8 +42,9 @@ dependencies:
   eslint-config-next: 12.0.1_943cb0687d4531bd47edc4d1dd3992b2
   eslint-config-prettier: 8.3.0_eslint@7.32.0
   eslint-plugin-next: 0.0.0
-  eslint-plugin-prettier: 4.0.0_94254c01413ebaf1ad99cec97ec78f12
+  eslint-plugin-prettier: 4.0.0_6e975bd57c7acf028c1a9ddbbf60c898
   next: 12.0.1_react-dom@17.0.2+react@17.0.2
+  prettier: 2.4.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-map-gl: 6.1.17_react@17.0.2
@@ -2215,22 +2217,6 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: false
 
-  /eslint-plugin-prettier/4.0.0_94254c01413ebaf1ad99cec97ec78f12:
-    resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
-    engines: {node: '>=6.0.0'}
-    peerDependencies:
-      eslint: '>=7.28.0'
-      eslint-config-prettier: '*'
-      prettier: '>=2.0.0'
-    peerDependenciesMeta:
-      eslint-config-prettier:
-        optional: true
-    dependencies:
-      eslint: 7.32.0
-      eslint-config-prettier: 8.3.0_eslint@7.32.0
-      prettier-linter-helpers: 1.0.0
-    dev: false
-
   /eslint-plugin-react-hooks/4.2.0_eslint@7.32.0:
     resolution: {integrity: sha512-623WEiZJqxR7VdxFCKLI6d6LLpwJkGPYKODnkH3D7WpOG5KM8yWueBd8TLsNAetEJNF5iJmolaAKO3F8yzyVBQ==}
     engines: {node: '>=10'}
@@ -3080,6 +3066,10 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+    dev: false
+
+  /lottie-web/5.8.0:
+    resolution: {integrity: sha512-MieQQXm1TvRfsa0IEqd+R9EZ+2IxKHETOh6tuooP526BF42BrPtrA1oIPOWatNinB9eIaUzN40ZWD0TjyQz5Yw==}
     dev: false
 
   /lru-cache/6.0.0:
@@ -4439,7 +4429,7 @@ packages:
     dev: false
 
   file:projects/client.tgz:
-    resolution: {integrity: sha512-q8SnMRLUXFHnQg9zfkTnftO03siKnJ2LZJzJvbaAL8O4aYHPUAhTT7TuHJpD/l7f0BHASxiEPdOrrSINjpaHeA==, tarball: file:projects/client.tgz}
+    resolution: {integrity: sha512-FbEFUoj7NECJ3sZkJJiFPu5D64S9UXC14DpcVi04NgdP//BXrwK/KTj+zQCD4QgTz0GdNlS4KwKlBk02S42VXA==, tarball: file:projects/client.tgz}
     name: '@rush-temp/client'
     version: 0.0.0
     dependencies:
@@ -4459,6 +4449,7 @@ packages:
       eslint-config-prettier: 8.3.0_eslint@7.32.0
       eslint-plugin-next: 0.0.0
       eslint-plugin-prettier: 4.0.0_6e975bd57c7acf028c1a9ddbbf60c898
+      lottie-web: 5.8.0
       next: 12.0.1_react-dom@17.0.2+react@17.0.2
       prettier: 2.4.1
       react: 17.0.2

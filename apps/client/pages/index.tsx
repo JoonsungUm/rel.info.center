@@ -7,6 +7,7 @@ import styles from '../styles/Home.module.css'
 import { Toolbar, Box, Grid, Typography, Card, CardContent, CardMedia, CardActionArea } from '@mui/material'
 
 import Appbar from '../components/Appbar'
+import FlatMap from '../components/FlatMap'
 
 const Home: NextPage = () => {
   return (
@@ -21,13 +22,8 @@ const Home: NextPage = () => {
 
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        <Box sx={{ position: 'relative', width: '100%', height: 400, zIndex: -1 }}>
-          <Image src="/namhae.jpg" alt="onboard" layout="fill" objectFit="cover" />
-          <Box sx={{ position: 'relative', textAlign: 'center' }}>
-            <Typography pt={8} variant="h3" fontWeight="bold">
-              Welcome to 관계안내소!
-            </Typography>
-          </Box>
+        <Box sx={{ position: 'relative', width: '100%', height: 600, zIndex: -1 }}>
+          <FlatMap />
         </Box>
 
         <Grid container spacing={3} sx={{ pt: 4 }}>
