@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import lottie from 'lottie-web'
 import { Box } from '@mui/material'
 
-const NewMap = () => {
+const New3DMap = () => {
   //lottie
   const likecontainer = useRef()
   useEffect(() => {
@@ -11,7 +11,7 @@ const NewMap = () => {
       renderer: 'html' as any,
       loop: true,
       autoplay: true,
-      animationData: require('./data.json'),
+      animationData: require('./3dmap.json'),
     })
   }, [])
   return (
@@ -30,4 +30,4 @@ const NewMap = () => {
   )
 }
 
-export default NewMap
+export default New3DMap
