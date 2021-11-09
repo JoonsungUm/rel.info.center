@@ -8,7 +8,7 @@ const NewMap = () => {
   useEffect(() => {
     lottie.loadAnimation({
       container: likecontainer.current,
-      renderer: 'html' as any,
+      renderer: 'svg',
       loop: true,
       autoplay: true,
       animationData: require('./data.json'),
