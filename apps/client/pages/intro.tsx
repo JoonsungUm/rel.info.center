@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        <Box sx={{ position: 'relative', width: '100%', height: 600, zIndex: -1 }}>
+        <Box sx={{ position: 'relative', width: '100%', height: { xs: 200, sm: 300, lg: 400 }, zIndex: -1 }}>
           <New3DMap />
         </Box>
 
