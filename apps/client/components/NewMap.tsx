@@ -6,13 +6,15 @@ const NewMap = () => {
   //lottie
   const likecontainer = useRef()
   useEffect(() => {
-    lottie.loadAnimation({
-      container: likecontainer.current,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      animationData: require('./data.json'),
-    })
+    lottie
+      .loadAnimation({
+        container: likecontainer.current,
+        renderer: 'html' as any,
+        loop: true,
+        autoplay: true,
+        animationData: require('./data.json'),
+      })
+      .resize()
   }, [])
   return (
     <Box>
