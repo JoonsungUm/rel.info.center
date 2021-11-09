@@ -15,6 +15,8 @@ const NewMap = () => {
         animationData: require('./data.json'),
       })
       .resize()
+
+    lottie.setLocationHref(likecontainer.current)
   }, [])
   return (
     <Box>
