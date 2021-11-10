@@ -6,6 +6,8 @@ const NewMap = () => {
   //lottie
   const likecontainer = useRef()
   useEffect(() => {
+    lottie.setLocationHref(likecontainer.current)
+
     lottie
       .loadAnimation({
         container: likecontainer.current,
@@ -15,8 +17,6 @@ const NewMap = () => {
         animationData: require('./data.json'),
       })
       .resize()
-
-    lottie.setLocationHref(likecontainer.current)
   }, [])
   return (
     <Box>
