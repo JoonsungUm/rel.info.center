@@ -7,7 +7,6 @@ import styles from '../styles/Home.module.css'
 import { Toolbar, Box, Grid, Typography, Card, CardContent, CardMedia, CardActionArea } from '@mui/material'
 
 import Appbar from '../components/Appbar'
-import New3DMap from '../components/New3DMap'
 
 const Home: NextPage = () => {
   return (
@@ -22,10 +21,6 @@ const Home: NextPage = () => {
 
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        <Box sx={{ position: 'relative', width: '100%', height: { xs: 200, sm: 300, lg: 400 }, zIndex: -1 }}>
-          <New3DMap />
-        </Box>
-
         <Typography variant="h3" component="h1" gutterBottom textAlign="center">
           관계인구란?
         </Typography>

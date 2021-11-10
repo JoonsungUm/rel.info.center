@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <NewMap />
         </Box>
 
-        <Typography variant="h2" component="h1" gutterBottom textAlign="center">
+        <Typography variant="h2" component="h1" gutterBottom textAlign="center" mt={5}>
           하나의 관계가
           <br />
           새로운 인구를 형성한다.
