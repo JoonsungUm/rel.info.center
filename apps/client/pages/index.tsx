@@ -1,15 +1,22 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
-import { Toolbar, Box, Grid, Typography, Card, CardContent, CardMedia, CardActionArea } from '@mui/material'
+import { Toolbar, Box, Container, Typography } from '@mui/material'
 
 import Appbar from '../components/Appbar'
-import NewMap from '../components/NewMap'
+import CenterGrid from '../components/CenterGrid'
+import Footer from '../components/Footer'
+import IntroPopulation from '../components/IntroPopulation'
+import FadeInSection from '../components/FadeInSelection'
 
 const Home: NextPage = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false)
+
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen)
+  }
+
   return (
     <Fragment>
       <Head>
@@ -18,119 +25,37 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Appbar tabIndex={1} />
+      <Appbar handleDrawerToggle={handleDrawerToggle} />
 
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Toolbar />
-        <Box sx={{ position: 'relative', width: '100%', height: { xs: 200, sm: 300, lg: 400 }, zIndex: -1 }}>
-          <NewMap />
-        </Box>
+      <Box component="main" sx={{ p: 3 }}>
+        <Container maxWidth="xl" sx={{ px: 0 }}>
+          <Toolbar />
 
-        <Typography variant="h2" component="h1" gutterBottom textAlign="center" mt={5}>
-          하나의 관계가
-          <br />
-          새로운 인구를 형성한다.
-        </Typography>
-        <Grid container spacing={3} sx={{ pt: 4 }}>
-          <Grid item xs={12} sm={6} md={6}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="140"
-                  image="/namhae.jpg"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    안내소 소개
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    안내소는 안내소를 위한 서비스를 제공하는 서비스입니다.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="140"
-                  image="/namhae.jpg"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    안내소 소개
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    안내소는 안내소를 위한 서비스를 제공하는 서비스입니다.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="140"
-                  image="/namhae.jpg"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    안내소 소개
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    안내소는 안내소를 위한 서비스를 제공하는 서비스입니다.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="140"
-                  image="/namhae.jpg"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    안내소 소개
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    안내소는 안내소를 위한 서비스를 제공하는 서비스입니다.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        </Grid>
+          <Box my={50}>
+            <FadeInSection>
+              <IntroPopulation />
+            </FadeInSection>
+          </Box>
+
+          <Box my={50}>
+            <FadeInSection>
+              <Typography variant="h2" component="h1" gutterBottom textAlign="center" mt={5}>
+                하나의 관계가
+                <br />
+                새로운 인구를 형성한다.
+              </Typography>
+            </FadeInSection>
+          </Box>
+
+          <Box my={50}>
+            <FadeInSection>
+              <CenterGrid />
+            </FadeInSection>
+          </Box>
+        </Container>
       </Box>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Footer />
     </Fragment>
   )
 }

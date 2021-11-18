@@ -22,7 +22,8 @@
     "@deck.gl/react": "~8.6.0",
     "@deck.gl/layers": "~8.6.0",
     "@loaders.gl/core": "~3.0.12",
-    "lottie-web": "~5.8.0"
+    "@mui/icons-material": "~5.1.1",
+    "react-spring": "~9.3.0"
   },
   "devDependencies": {
     "@types/node": "16.11.6",
