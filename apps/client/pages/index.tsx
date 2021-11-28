@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
+import namhaePic from '../public/images/namhae.png'
 
-import { Toolbar, Box, Container, Typography } from '@mui/material'
+import { Toolbar, Box, Container, Paper, Stack, Typography } from '@mui/material'
 
 import Appbar from '../components/Appbar'
 import CenterGrid from '../components/CenterGrid'
@@ -27,32 +29,56 @@ const Home: NextPage = () => {
 
       <Appbar handleDrawerToggle={handleDrawerToggle} />
 
-      <Box component="main" sx={{ p: 3 }}>
-        <Container maxWidth="xl" sx={{ px: 0 }}>
+      <Box component="main">
+        <Box>
           <Toolbar />
 
-          <Box my={50}>
-            <FadeInSection>
-              <IntroPopulation />
-            </FadeInSection>
+          <Box sx={{ backgroundColor: 'namhae.main' }}>
+            <Image src={namhaePic} alt="namhae map" />
           </Box>
 
-          <Box my={50}>
-            <FadeInSection>
-              <Typography variant="h2" component="h1" gutterBottom textAlign="center" mt={5}>
-                하나의 관계가
-                <br />
-                새로운 인구를 형성한다.
-              </Typography>
-            </FadeInSection>
+          <Container>
+            <Box my={30}>
+              <FadeInSection>
+                <IntroPopulation />
+              </FadeInSection>
+            </Box>
+          </Container>
+
+          <Box my={30}>
+            <Paper
+              height={500}
+              sx={{ border: 0, borderRadius: 0, boxShadow: 0, backgroundColor: 'primary.main' }}
+              component={Stack}
+              direction="column"
+              justifyContent="center"
+            >
+              <FadeInSection>
+                <Typography
+                  color="namhae.main"
+                  variant="h4"
+                  component="h1"
+                  fontWeight="fontWeightBold"
+                  gutterBottom
+                  textAlign="center"
+                  mt={5}
+                >
+                  하나의 관계가
+                  <br />
+                  새로운 인구를 형성한다.
+                </Typography>
+              </FadeInSection>
+            </Paper>
           </Box>
 
-          <Box my={50}>
-            <FadeInSection>
-              <CenterGrid />
-            </FadeInSection>
-          </Box>
-        </Container>
+          <Container>
+            <Box my={30}>
+              <FadeInSection>
+                <CenterGrid />
+              </FadeInSection>
+            </Box>
+          </Container>
+        </Box>
       </Box>
 
       <Footer />

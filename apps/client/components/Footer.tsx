@@ -7,7 +7,7 @@ const Footer: VFC = () => {
     <Container maxWidth="lg" sx={{ my: 3, textAlign: 'center' }}>
       <footer>
         <Typography variant="h6" gutterBottom>
-          슬렁슬렁 관련 정보 (연락처, 주소 등)
+          {"'관계인구' 관련 정보 (연락처, 주소 등)"}
         </Typography>
       </footer>
     </Container>

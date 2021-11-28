@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, VFC } from 'react'
 
-import { Box, AppBar, Toolbar, Typography, Slide, useScrollTrigger, IconButton } from '@mui/material'
+import { AppBar, Toolbar, Typography, Slide, useScrollTrigger, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 
 const HideOnScroll: FC = ({ children }) => {
