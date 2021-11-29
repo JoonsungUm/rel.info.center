@@ -5,12 +5,13 @@ import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/m
 interface CenterCardProps {
   title: string
   imageUrl: string
+  linkUrl: string
 }
 
-const CenterCard: VFC<CenterCardProps> = ({ title, imageUrl }) => {
+const CenterCard: VFC<CenterCardProps> = ({ title, imageUrl, linkUrl }) => {
   return (
     <Card>
-      <CardActionArea>
+      <CardActionArea href={linkUrl} target="_blank" rel="noopener noreferrer">
         <CardMedia
           component="img"
           sx={{
