@@ -9,7 +9,7 @@ const IntroPopulation: VFC = () => {
         sx={{ color: 'namhae.main' }}
         mb={10}
         variant="h3"
-        component="h1"
+        component="h3"
         fontWeight="fontWeightBold"
         gutterBottom
         textAlign="center"
@@ -21,7 +21,7 @@ const IntroPopulation: VFC = () => {
         sx={{ color: 'namhae.main' }}
         my={5}
         variant="h6"
-        component="h1"
+        component="div"
         gutterBottom
         textAlign="center"
       >
@@ -35,7 +35,7 @@ const IntroPopulation: VFC = () => {
           <Typography
             sx={{ color: 'namhae.main' }}
             variant="h4"
-            component="h2"
+            component="div"
             fontWeight="fontWeightBold"
             gutterBottom
             textAlign="center"
@@ -47,7 +47,7 @@ const IntroPopulation: VFC = () => {
           <Typography
             sx={{ color: 'namhae.main' }}
             variant="h4"
-            component="h2"
+            component="div"
             fontWeight="fontWeightBold"
             gutterBottom
             textAlign="center"
@@ -59,7 +59,7 @@ const IntroPopulation: VFC = () => {
           <Typography
             sx={{ color: 'namhae.main' }}
             variant="h4"
-            component="h2"
+            component="div"
             fontWeight="fontWeightBold"
             gutterBottom
             textAlign="center"
@@ -71,7 +71,7 @@ const IntroPopulation: VFC = () => {
           <Typography
             sx={{ color: 'namhae.main' }}
             variant="h4"
-            component="h2"
+            component="div"
             fontWeight="fontWeightBold"
             gutterBottom
             textAlign="center"
@@ -83,15 +83,15 @@ const IntroPopulation: VFC = () => {
         <Grid item md={2} />
       </Grid>
 
-      <Typography sx={{ color: 'namhae.main' }} variant="h5" component="h1" gutterBottom textAlign="center">
+      <Typography sx={{ color: 'namhae.main' }} variant="h5" component="div" gutterBottom textAlign="center">
         등 다양한 활동을 통해 지역과 관계를 맺고
       </Typography>
 
-      <Typography sx={{ color: 'namhae.main' }} variant="h5" component="h1" gutterBottom textAlign="center">
+      <Typography sx={{ color: 'namhae.main' }} variant="h5" component="div" gutterBottom textAlign="center">
         정주인구 나 관광인구가 아닌
       </Typography>
 
-      <Typography sx={{ color: 'namhae.main' }} variant="h5" component="h1" gutterBottom textAlign="center">
+      <Typography sx={{ color: 'namhae.main' }} variant="h5" component="div" gutterBottom textAlign="center">
         지역 유대형의 제 3의 인구입니다.
       </Typography>
     </Fragment>
