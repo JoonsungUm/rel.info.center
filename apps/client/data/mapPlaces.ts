@@ -1,0 +1,92 @@
+export const MAP_PLACES = [
+  {
+    name: '남해청년센터',
+    address: '경남 남해군 남해읍 망운로 1-16',
+    siteUrl: 'https://www.namhae.go.kr/youthcenter/',
+    imageUrl: '',
+  },
+  {
+    name: '플랜포히어',
+    address: '경남 남해군 상주면 남해대로697번길 4',
+    siteUrl: 'https://planforhere.com',
+    imageUrl: '',
+  },
+  {
+    name: '헤테로토피아',
+    address: '경남 남해군 삼동면 봉화로538',
+    siteUrl: 'https://heterotopia.co.kr',
+    imageUrl: '',
+  },
+  {
+    name: '키토부',
+    address: '경남 남해군 삼동면 삼이로348',
+    siteUrl: 'http://www.kitovu.kr',
+    imageUrl: '',
+  },
+  {
+    name: '뮤지엄남해',
+    address: '경남 남해군 창선면 연곡로 13',
+    siteUrl: 'https://www.뮤지엄남해앤동창선아트스테이.com',
+    imageUrl: '',
+  },
+  {
+    name: '3people',
+    address: '경남 남해군 삼동면 봉화로538',
+    siteUrl: 'https://www.3people.co.kr',
+    imageUrl: '',
+  },
+  {
+    name: '둥지싸롱',
+    address: '경남 남해읍 화전로38번길 9',
+    siteUrl: 'https://www.instagram.com/dungjisalon',
+    imageUrl: '',
+  },
+  {
+    name: '살er',
+    address: '경남 남해군 삼동면 양화금로 14',
+    siteUrl: 'https://www.saler.kr',
+    imageUrl: '',
+  },
+  {
+    name: '동고동락',
+    address: '경남 남해군 상주면 남해대로697번길 4',
+    siteUrl: 'https://blog.naver.com/sangjucoop',
+    imageUrl: '',
+  },
+  {
+    name: '마파람 사진관',
+    address: '경상남도 남해군 남해읍 화전로122번길 34, 2층',
+    siteUrl: 'https://maparam.myportfolio.com',
+    imageUrl: '',
+  },
+  {
+    name: '스테이 위드 북',
+    address: '경남 남해군 서면 남서대로 1673',
+    siteUrl: 'https://linktr.ee/stay.withbook',
+    imageUrl: '',
+  },
+  {
+    name: '해변의 카카카',
+    address: '경남 남해군 남면 무지개로123',
+    siteUrl: 'https://www.instagram.com/cacacaontheshore',
+    imageUrl: '',
+  },
+  {
+    name: '팜프라',
+    address: '경남 남해군 상주면 양아로533번길 18',
+    siteUrl: 'https://www.farmfra.com',
+    imageUrl: '',
+  },
+  {
+    name: '두두왘 스튜디오',
+    address: '경남 남해군 삼동면 양화금로 14',
+    siteUrl: '',
+    imageUrl: '',
+  },
+  {
+    name: 'Cjellyfish studio',
+    address: '경남 남해군 삼동면 동부대로793번길 11-6',
+    siteUrl: 'https://cjellyfish.com',
+    imageUrl: '',
+  },
+]
