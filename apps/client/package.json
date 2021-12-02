@@ -16,12 +16,6 @@
     "@mui/system": "~5.0.5",
     "@emotion/react": "~11.5.0",
     "@emotion/styled": "~11.3.0",
-    "deck.gl": "~8.6.0",
-    "react-map-gl": "~6.1.17",
-    "@deck.gl/core": "~8.6.0",
-    "@deck.gl/react": "~8.6.0",
-    "@deck.gl/layers": "~8.6.0",
-    "@loaders.gl/core": "~3.0.12",
     "@mui/icons-material": "~5.1.1",
     "react-spring": "~9.3.0"
   },
