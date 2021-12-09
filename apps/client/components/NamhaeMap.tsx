@@ -6,13 +6,28 @@ import namhaePic from '../public/images/namhae.png'
 import { Box, Stack, Grid, Typography } from '@mui/material'
 
 import { MAP_PLACES } from '../data/mapPlaces'
+import MapMarkerCanvas from './MapMarkerCanvas'
+import MapCard from './MapCard'
 
 const NamhaeMap: VFC = () => {
   return (
     <Box sx={{ backgroundColor: 'namhae.main' }}>
       <Box
         sx={{
+          '& canvas': {
+            position: 'absolute',
+            zIndex: 10,
+          },
+        }}
+      >
+        <MapMarkerCanvas />
+        <Image src={namhaePic} alt="namhae map" />
+      </Box>
+
+      <Box
+        sx={{
           p: { xs: 3, sm: 6 },
+          top: { sm: 'auto', md: '50px' },
           position: { sm: 'relative', md: 'absolute' },
           color: 'whitesmoke',
         }}
@@ -39,8 +54,23 @@ const NamhaeMap: VFC = () => {
           </Grid>
         </Box>
       </Box>
-      <Box>
-        <Image src={namhaePic} alt="namhae map" />
+
+      <Box
+        sx={{
+          p: { xs: 3, sm: 6 },
+          position: { sm: 'relative', md: 'absolute' },
+          top: { sm: 'auto', md: '30%' },
+          right: { sm: 'auto', md: '0' },
+          maxWidth: { xs: '100%', sm: '100%', md: '28%' },
+          color: 'whitesmoke',
+        }}
+      >
+        <MapCard
+          title={MAP_PLACES[0].name}
+          description={MAP_PLACES[0].address}
+          imageUrl={MAP_PLACES[0].imageUrl}
+          linkUrl={MAP_PLACES[0].siteUrl}
+        />
       </Box>
     </Box>
   )
