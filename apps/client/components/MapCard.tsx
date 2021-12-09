@@ -12,7 +12,7 @@ const MapCard: VFC<MapCardProps> = ({ title, description, imageUrl, linkUrl }) =
   return (
     <Card sx={{ backgroundColor: 'namhae.main', borderRadius: 0, boxShadow: 'none' }}>
       <CardActionArea href={linkUrl} target="_blank" rel="noopener noreferrer">
-        <Box sx={{ borderStyle: 'dashed', border: 3, borderRadius: 2, borderColor: 'primary.main' }}>
+        <Box sx={{ border: 3, borderStyle: 'dashed', borderRadius: 2, borderColor: 'primary.main' }}>
           <CardMedia
             component="img"
             image={imageUrl}
