@@ -1,92 +1,147 @@
-export const MAP_PLACES = [
+export interface MapPlace {
+  id: number
+  name: string
+  address: string
+  imageUrl: string
+  siteUrl: string
+  x: number
+  y: number
+}
+
+export const MAP_PLACES: MapPlace[] = [
   {
+    id: 1,
     name: '남해청년센터',
     address: '경남 남해군 남해읍 망운로 1-16',
     siteUrl: 'https://www.namhae.go.kr/youthcenter/',
     imageUrl: '',
+    x: 41,
+    y: 42,
   },
   {
+    id: 2,
     name: '플랜포히어',
     address: '경남 남해군 상주면 남해대로697번길 4',
     siteUrl: 'https://planforhere.com',
     imageUrl: '',
+    x: 58,
+    y: 78,
   },
   {
+    id: 3,
     name: '헤테로토피아',
     address: '경남 남해군 삼동면 봉화로538',
     siteUrl: 'https://heterotopia.co.kr',
     imageUrl: '',
+    x: 58,
+    y: 51,
   },
   {
+    id: 4,
     name: '키토부',
     address: '경남 남해군 삼동면 삼이로348',
     siteUrl: 'http://www.kitovu.kr',
     imageUrl: '',
+    x: 56,
+    y: 50,
   },
   {
+    id: 5,
     name: '뮤지엄남해',
     address: '경남 남해군 창선면 연곡로 13',
     siteUrl: 'https://www.뮤지엄남해앤동창선아트스테이.com',
     imageUrl: '',
+    x: 66,
+    y: 32,
   },
   {
+    id: 6,
     name: '3people',
     address: '경남 남해군 삼동면 봉화로538',
     siteUrl: 'https://www.3people.co.kr',
     imageUrl: '',
+    x: 58,
+    y: 51,
   },
   {
+    id: 7,
     name: '둥지싸롱',
     address: '경남 남해읍 화전로38번길 9',
     siteUrl: 'https://www.instagram.com/dungjisalon',
     imageUrl: '',
+    x: 41,
+    y: 44,
   },
   {
+    id: 8,
     name: '살er',
     address: '경남 남해군 삼동면 양화금로 14',
     siteUrl: 'https://www.saler.kr',
     imageUrl: '',
+    x: 66,
+    y: 48,
   },
   {
+    id: 9,
     name: '동고동락',
     address: '경남 남해군 상주면 남해대로697번길 4',
     siteUrl: 'https://blog.naver.com/sangjucoop',
     imageUrl: '',
+    x: 58,
+    y: 78,
   },
   {
+    id: 10,
     name: '마파람 사진관',
     address: '경상남도 남해군 남해읍 화전로122번길 34, 2층',
     siteUrl: 'https://maparam.myportfolio.com',
     imageUrl: '',
+    x: 42,
+    y: 40,
   },
   {
+    id: 11,
     name: '스테이 위드 북',
     address: '경남 남해군 서면 남서대로 1673',
     siteUrl: 'https://linktr.ee/stay.withbook',
     imageUrl: '',
+    x: 34,
+    y: 51,
   },
   {
+    id: 12,
     name: '해변의 카카카',
     address: '경남 남해군 남면 무지개로123',
     siteUrl: 'https://www.instagram.com/cacacaontheshore',
     imageUrl: '',
+    x: 43,
+    y: 71,
   },
   {
+    id: 13,
     name: '팜프라',
     address: '경남 남해군 상주면 양아로533번길 18',
     siteUrl: 'https://www.farmfra.com',
     imageUrl: '',
+    x: 53,
+    y: 75,
   },
   {
+    id: 14,
     name: '두두왘 스튜디오',
     address: '경남 남해군 삼동면 양화금로 14',
     siteUrl: '',
     imageUrl: '',
+    x: 66,
+    y: 48,
   },
   {
+    id: 15,
     name: 'Cjellyfish studio',
     address: '경남 남해군 삼동면 동부대로793번길 11-6',
     siteUrl: 'https://cjellyfish.com',
     imageUrl: '',
+    x: 67,
+    y: 62,
   },
 ]

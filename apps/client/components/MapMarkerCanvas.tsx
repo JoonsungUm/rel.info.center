@@ -1,6 +1,12 @@
 import React, { VFC, useRef, useEffect } from 'react'
 
-const MapMarkerCanvas: VFC = (props) => {
+interface MapMarkerCanvasProps {
+  x: number
+  y: number
+  isSelected: boolean
+}
+
+const MapMarkerCanvas: VFC<MapMarkerCanvasProps> = ({ x, y, isSelected, ...props }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -12,22 +18,14 @@ const MapMarkerCanvas: VFC = (props) => {
     canvas.width = canvas.parentElement?.clientWidth
     canvas.height = canvas.parentElement?.clientHeight
     context.fillStyle = '#ffd02c'
+    context.strokeStyle = '#ffd02c'
+    context.lineWidth = 2
 
     context.beginPath()
-    context.arc(45 * (canvas.width / 100), 48 * (canvas.height / 100), 10, 0, Math.PI * 2)
-    context.fill()
+    context.arc(x * (canvas.width / 100), y * (canvas.height / 100), isSelected ? 10 : 6, 0, Math.PI * 2)
+    isSelected ? context.fill() : context.stroke()
     context.closePath()
-
-    context.beginPath()
-    context.arc(35 * (canvas.width / 100), 32 * (canvas.height / 100), 10, 0, Math.PI * 2)
-    context.fill()
-    context.closePath()
-
-    context.beginPath()
-    context.arc(55 * (canvas.width / 100), 64 * (canvas.height / 100), 10, 0, Math.PI * 2)
-    context.fill()
-    context.closePath()
-  }, [])
+  }, [x, y, isSelected])
 
   return <canvas ref={canvasRef} {...props} />
 }

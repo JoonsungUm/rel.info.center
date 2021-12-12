@@ -1,4 +1,4 @@
-import React, { VFC } from 'react'
+import React, { VFC, useState, useEffect, useCallback } from 'react'
 
 import Image from 'next/image'
 import namhaePic from '../public/images/namhae.png'
@@ -10,6 +10,20 @@ import MapMarkerCanvas from './MapMarkerCanvas'
 import MapCard from './MapCard'
 
 const NamhaeMap: VFC = () => {
+  const [placeId, setPlaceId] = useState<number>(0)
+
+  const changePlace = useCallback(() => {
+    console.log(placeId)
+
+    const nextPlaceId = placeId >= 14 ? 0 : placeId + 1
+    setPlaceId(nextPlaceId)
+  }, [placeId])
+
+  useEffect(() => {
+    const interval = setInterval(changePlace, 3000)
+    return () => clearInterval(interval)
+  }, [changePlace])
+
   return (
     <Box sx={{ backgroundColor: 'namhae.main' }}>
       <Box
@@ -20,7 +34,9 @@ const NamhaeMap: VFC = () => {
           },
         }}
       >
-        <MapMarkerCanvas />
+        {MAP_PLACES.map((place, index) => (
+          <MapMarkerCanvas key={index} x={place.x} y={place.y} isSelected={index === placeId} />
+        ))}
         <Image src={namhaePic} alt="namhae map" />
       </Box>
 
@@ -49,7 +65,7 @@ const NamhaeMap: VFC = () => {
         >
           <Grid container>
             {MAP_PLACES.map((place, index) => (
-              <MapItemTypo title={place.name} key={index} />
+              <MapItemTypo key={index} title={place.name} isSelected={index === placeId} />
             ))}
           </Grid>
         </Box>
@@ -66,10 +82,10 @@ const NamhaeMap: VFC = () => {
         }}
       >
         <MapCard
-          title={MAP_PLACES[0].name}
-          description={MAP_PLACES[0].address}
-          imageUrl={MAP_PLACES[0].imageUrl}
-          linkUrl={MAP_PLACES[0].siteUrl}
+          title={MAP_PLACES[placeId].name}
+          description={MAP_PLACES[placeId].address}
+          imageUrl={MAP_PLACES[placeId].imageUrl}
+          linkUrl={MAP_PLACES[placeId].siteUrl}
         />
       </Box>
     </Box>
@@ -95,14 +111,18 @@ const MapTitleTypo: VFC<MapTitleTypoPops> = ({ title }) => (
 
 interface MapItemTypoPops {
   title: string
+  isSelected: boolean
 }
 
-const MapItemTypo: VFC<MapItemTypoPops> = ({ title }) => (
+const MapItemTypo: VFC<MapItemTypoPops> = ({ title, isSelected }) => (
   <Grid item xs={12} sm={6} md={12}>
     <Typography
       sx={{
         textAlign: { xs: 'center', sm: 'center', md: 'left', lg: 'left' },
-        fontSize: { xs: '1rem', sm: '1rem', md: '0.8rem', lg: '1rem', xl: '1.2rem' },
+        fontSize: isSelected
+          ? { xs: '1.2rem', sm: '1.2rem', md: '1rem', lg: '1.2rem', xl: '1.4rem' }
+          : { xs: '1rem', sm: '1rem', md: '0.8rem', lg: '1rem', xl: '1.2rem' },
+        fontWeight: isSelected ? 'bold' : 'normal',
       }}
       gutterBottom
     >
